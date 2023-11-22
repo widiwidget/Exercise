@@ -35,7 +35,7 @@ class HomeView extends StatelessWidget {
                       Text('Business Administration')
                     ],
                   ),
-                  CustomElevatedButton(onPressed: (){}, child: const Icon(Icons.keyboard_arrow_right_outlined))
+                  CustomElevatedButton(onPressed: (){}, child: const Icon(Icons.keyboard_arrow_right_outlined)),
                 ],
               ),
             )
