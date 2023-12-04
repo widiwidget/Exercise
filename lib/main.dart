@@ -1,4 +1,4 @@
-import 'package:exercise/feature/home/view/home_view.dart';
+import 'package:exercise/feature/main/view/main_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,10 +10,10 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Exercise",
-      home: HomeView(),
+      home: MainView(),
     );
   }
 }

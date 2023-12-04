@@ -41,8 +41,14 @@ class HomeCardWidget extends StatelessWidget {
                   children: [
                     const Icon(Icons.push_pin_outlined),
                     Text(
-                      'Room 204 . UPCOMING',
+                      'Room 204 . ',
                       style: context.general.textTheme.titleSmall,
+                    ),
+                    Text(
+                      'UPCOMİNG',
+                      style: context.general.textTheme.titleSmall?.copyWith(
+                        color: AppColor.turkishBoy.getColor()
+                      ),
                     ),
                   ],
                 ),

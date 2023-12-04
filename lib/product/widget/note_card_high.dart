@@ -5,7 +5,6 @@ import 'package:exercise/product/extension/context/padding.dart';
 import 'package:exercise/product/extension/context/size.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/const/colors.dart';
 
 class NoteCardHigh extends StatelessWidget {
   const NoteCardHigh({
@@ -16,8 +15,8 @@ class NoteCardHigh extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: context.padding.dynamicOnly(top: (10 - model.note) / 100),
       width: context.sized.dynamicHeigth(0.06),
-      height: context.sized.dynamicHeigth(0.15), //model notuna göre high yüksekliğini belirle
       decoration: BoxDecoration(
         color: model.color,
         borderRadius: context.border.largeBorderRadius,

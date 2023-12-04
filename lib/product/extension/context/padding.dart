@@ -16,10 +16,10 @@ class _ContextPaddingExtension {
       EdgeInsets.all(_context.sized.height * value);
 
   EdgeInsets dynamicSymmetric(
-          {required double vertical, required double horizontal}) =>
+          {double? vertical = 0, double? horizontal = 0}) =>
       EdgeInsets.symmetric(
-          vertical: _context.sized.height * vertical,
-          horizontal: _context.sized.height * horizontal);
+          vertical: _context.sized.height * vertical!,
+          horizontal: _context.sized.height * horizontal!);
 
   EdgeInsets dynamicOnly(
           {double? top = 0.0,
