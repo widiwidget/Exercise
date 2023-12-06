@@ -47,11 +47,11 @@ class _MainViewState extends State<MainView> {
       activeColor: Colors.transparent,
       initialActiveIndex: activeIndex,
       items: [
-        _tabItem(Icons.flag_outlined,0,TabItems.campus.getName()),
-        _tabItem(Icons.bolt_outlined,1,TabItems.activity.getName()),
-        _tabItem(Icons.circle_outlined,2, TabItems.mySpace.getName()),
-        _tabItem(Icons.groups_outlined,3,TabItems.clubs.getName()),
-        _tabItem(Icons.layers_outlined,4,TabItems.resource.getName()),
+        _tabItem(Icons.flag_outlined,TabItems.campus.index,TabItems.campus.getName()),
+        _tabItem(Icons.bolt_outlined,TabItems.activity.index,TabItems.activity.getName()),
+        _tabItem(Icons.circle_outlined,TabItems.mySpace.index, TabItems.mySpace.getName()),
+        _tabItem(Icons.groups_outlined,TabItems.clubs.index,TabItems.clubs.getName()),
+        _tabItem(Icons.layers_outlined,TabItems.resource.index,TabItems.resource.getName()),
       ],
       onTap: _bottomNavBarOnTap,
     );
