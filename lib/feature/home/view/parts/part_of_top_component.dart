@@ -1,6 +1,6 @@
 part of "../home_view.dart";
 
-class _PartOfHomeTopComponent extends StatelessWidget {
+class _PartOfHomeTopComponent extends StatelessWidget with _TopComponentUtility{
   const _PartOfHomeTopComponent();
 
   @override
@@ -15,13 +15,17 @@ class _PartOfHomeTopComponent extends StatelessWidget {
       ],
     );
   }
+}
+
+mixin _TopComponentUtility{
+  double topComponentGeneralSize(BuildContext context) => context.sized.dynamicHeigth(0.06);
 
   CustomElevatedButton _customElevatedButton(
       BuildContext context, IconData icon) {
     return CustomElevatedButton(
         shape: RoundedRectangleBorder(
             borderRadius: context.border.smallBorderRadius),
-        height: context.sized.dynamicHeigth(0.06),
+        height: topComponentGeneralSize(context),
         elevation: const MaterialStatePropertyAll(0),
         backgroundColor: AppColor.drWhite.getColor(),
         onPressed: () {},
@@ -29,9 +33,12 @@ class _PartOfHomeTopComponent extends StatelessWidget {
   }
 
   Container _photoAndTexts(BuildContext context) {
+    const personalImage = "assets/images/animation_face.jpg";
+    const nameText = 'Paul A. Hayden';
+    const personalJob = 'Business Administration';
     return Container(
-      height: context.sized.dynamicHeigth(0.06),
-      width: context.sized.dynamicHeigth(0.36),
+      height: topComponentGeneralSize(context),
+      width: topComponentGeneralSize(context) * 6,
       decoration: BoxDecoration(
           color: AppColor.royalWedding.getColor(),
           borderRadius: context.border.smallBorderRadius),
@@ -42,20 +49,19 @@ class _PartOfHomeTopComponent extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: context.border.smallBorderRadius,
                 image: const DecorationImage(
-                    image: AssetImage("assets/images/animation_face.jpg"),
+                    image: AssetImage(personalImage),
                     fit: BoxFit.cover)),
-            width: context.sized.dynamicHeigth(0.06),
-            height: context.sized.dynamicHeigth(0.06),
+            width: topComponentGeneralSize(context),
+            height: topComponentGeneralSize(context),
           ),
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [Text('Paul A. Hayden'), Text('Business Administration')],
+            children: [Text(nameText), Text(personalJob)],
           ),
           CustomElevatedButton(
-              width: context.sized.dynamicHeigth(0.06),
+              width: topComponentGeneralSize(context),
               backgroundColor: AppColor.royalWedding.getColor(),
-              shape: RoundedRectangleBorder(
-                  borderRadius: context.border.smallBorderRadius),
+              shape: RoundedRectangleBorder(borderRadius: context.border.smallBorderRadius),
               elevation: const MaterialStatePropertyAll(0),
               onPressed: () {},
               child: Container(

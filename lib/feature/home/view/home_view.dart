@@ -39,10 +39,9 @@ class _HomeViewState extends State<HomeView> with HomeUtility,_PageUtility{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: context.padding.dynamicOnly(top: 0.03,right: 0.03,left: 0.03),
+        padding: pagePadding(),
         child: SafeArea(
           child: ListView(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const _PartOfHomeTopComponent(),
               _todayText(context),
@@ -51,7 +50,6 @@ class _HomeViewState extends State<HomeView> with HomeUtility,_PageUtility{
               _animationSlide(context),
               AcademicOverView(noteCardHighModelList: noteCardHighModelList),
               Padding(padding: context.padding.bottomOnlyNormal)
-              
             ],
           ),
         ),
@@ -60,17 +58,20 @@ class _HomeViewState extends State<HomeView> with HomeUtility,_PageUtility{
   }
 }
 
-mixin _PageUtility{
+mixin _PageUtility on State<HomeView>{
   late final ProjectInit _projectInit;
   late final List<CardModel> cardModelList;
   late final List<NoteCardHighModel> noteCardHighModelList;
+  EdgeInsets pagePadding() => context.padding.dynamicOnly(top: 0.03,right: 0.03,left: 0.03);
+  final String thursdayText = 'Thursday . 29 Oct';
+  var todayText = 'Today';
 
   Row _thursdayAndScheduleTextPlace(BuildContext context) {
     return Row(
       children: [
         Padding(
           padding: context.padding.rightOnlyNormal,
-          child: Text('Thursday . 29 Oct',style: context.general.textTheme.titleMedium,),
+          child: Text(thursdayText,style: context.general.textTheme.titleMedium,),
         ),
         const Icon(Icons.calendar_month_outlined)
       ],
@@ -79,12 +80,14 @@ mixin _PageUtility{
   Padding _todayText(BuildContext context) {
     return Padding(
       padding: context.padding.topOnlyMedium,
-      child: Text('Today',style: context.general.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),),
+      child: Text(todayText,style: context.general.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),),
     );
   }
   SizedBox _animationSlide(BuildContext context) {
+    var animatedContainerHeight = context.sized.dynamicHeigth(0.05);
+    var animationSlideHeigth = context.sized.dynamicHeigth(0.008);
     return SizedBox(
-      height: 5 + context.sized.mediumValue,
+      height: animationSlideHeigth + context.sized.mediumValue,
       child: ListView.builder(
         itemCount: cardModelList.length,
         scrollDirection: Axis.horizontal,
@@ -95,8 +98,8 @@ mixin _PageUtility{
             child: AnimatedContainer(
               margin: context.padding.topOnlyMedium,
               duration: context.duration.durationNormal,
-              width: cardModelList[index].isActive ? 40 : 20,
-              height: 5,
+              width: cardModelList[index].isActive ? animatedContainerHeight : animatedContainerHeight / 2,
+              height: animationSlideHeigth,
               decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: context.border.largeBorderRadius,

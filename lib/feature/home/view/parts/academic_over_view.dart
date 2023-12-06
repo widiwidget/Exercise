@@ -48,16 +48,14 @@ class AcademicOverView extends StatelessWidget
 mixin _AcademicPartUtility {
   Container _academicOverviewTextInform(
       BuildContext context, String text, int index) {
+    var dynamicHeigth = context.sized.dynamicHeigth(0.12);
     return Container(
       decoration: BoxDecoration(
         border: _setBorderToAcademicOverviewTextInform(index),
       ),
-      width: 90,
-      height: 50,
-      child: Text(
-        text,
-        style: context.general.textTheme.titleMedium,
-      ),
+      width: dynamicHeigth,
+      height: dynamicHeigth * (5/9),
+      child: Text(text, style: context.general.textTheme.titleMedium,),
     );
   }
 
@@ -83,15 +81,13 @@ mixin _AcademicPartUtility {
     return null;
   }
 
-  BorderSide get _borderSideToOverviewMethod =>
-      const BorderSide(color: Colors.black12, width: 1);
+  BorderSide get _borderSideToOverviewMethod => const BorderSide(color: Colors.black12, width: 1);
 
   Expanded _noteCardHeightPlace(BuildContext context,List<NoteCardHighModel> noteCardHighModelList) {
     return Expanded(
       flex: 5,
       child: Padding(
-        padding: context.padding
-            .dynamicSymmetric(horizontal: 0.035, vertical: 0.005),
+        padding: context.padding.dynamicSymmetric(horizontal: 0.035, vertical: 0.005),
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: noteCardHighModelList.length,
@@ -126,6 +122,10 @@ mixin _AcademicPartUtility {
   }
 
   Padding _gridStructure(BuildContext context) {
+    var semesterText = "SEMESTER:6.8";
+    var bestGPAText = 'BEST GPA:6.8';
+    var backLogsText = "BACKLOGS:1";
+    var attendanceText = "ATTENDANCE:91.5%";
     return Padding(
       padding: context.padding.topOnlySmall,
       child: SizedBox(
@@ -136,17 +136,17 @@ mixin _AcademicPartUtility {
               Column(
                 children: [
                   _academicOverviewTextInform(
-                      context, "SEMESTER:6.8", 0),
+                      context, semesterText, 0),
                   _academicOverviewTextInform(
-                      context, 'BEST GPA:6.8', 2),
+                      context, bestGPAText, 2),
                 ],
               ),
               Column(
                 children: [
                   _academicOverviewTextInform(
-                      context, "BACKLOGS:1", 1),
+                      context, backLogsText, 1),
                   _academicOverviewTextInform(
-                      context, "ATTENDANCE:91.5%", 3)
+                      context, attendanceText, 3)
                 ],
               )
             ],
@@ -155,12 +155,13 @@ mixin _AcademicPartUtility {
   }
 
   Row _academicOverViewText(BuildContext context) {
+    var academicOverviewText = 'Academic Overview';
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: context.padding.rightOnlySmall,
-          child: Text('Academic Overview',
+          child: Text(academicOverviewText,
               style: context.general.textTheme.titleMedium),
         ),
         Icon(
