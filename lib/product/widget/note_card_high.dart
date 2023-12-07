@@ -1,9 +1,10 @@
-import 'package:exercise/feature/home/model/note_card_high_model.dart';
 import 'package:exercise/product/extension/context/border_radius.dart';
 import 'package:exercise/product/extension/context/general.dart';
 import 'package:exercise/product/extension/context/padding.dart';
 import 'package:exercise/product/extension/context/size.dart';
 import 'package:flutter/material.dart';
+
+import '../../feature/my_space/model/note_card_high_model.dart';
 
 
 class NoteCardHigh extends StatelessWidget {

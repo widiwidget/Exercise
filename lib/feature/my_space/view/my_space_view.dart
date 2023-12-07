@@ -1,4 +1,3 @@
-import 'package:exercise/core/widget/custom_elevated_button.dart';
 import 'package:exercise/product/extension/context/border_radius.dart';
 import 'package:exercise/product/extension/context/duration.dart';
 import 'package:exercise/product/extension/context/general.dart';
@@ -10,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../../core/const/colors.dart';
+import '../../../core/widget/custom_elevated_button.dart';
 import '../../../product/widget/home_card_widget.dart';
 import '../../../product/widget/note_card_high.dart';
 import '../model/card_model.dart';
@@ -18,14 +18,14 @@ import '../model/note_card_high_model.dart';
 part 'parts/part_of_top_component.dart';
 part "parts/academic_over_view.dart";
 
-class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+class MySpaceView extends StatefulWidget {
+  const MySpaceView({Key? key}) : super(key: key);
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<MySpaceView> createState() => _MySpaceViewState();
 }
 
-class _HomeViewState extends State<HomeView> with HomeUtility,_PageUtility{
+class _MySpaceViewState extends State<MySpaceView> with HomeUtility,_PageUtility{
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _HomeViewState extends State<HomeView> with HomeUtility,_PageUtility{
   }
 }
 
-mixin _PageUtility on State<HomeView>{
+mixin _PageUtility on State<MySpaceView>{
   late final ProjectInit _projectInit;
   late final List<CardModel> cardModelList;
   late final List<NoteCardHighModel> noteCardHighModelList;

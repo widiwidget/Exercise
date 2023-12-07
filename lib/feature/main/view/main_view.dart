@@ -2,11 +2,12 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:exercise/core/const/colors.dart';
 import 'package:exercise/feature/activity/activity_view.dart';
 import 'package:exercise/feature/club/club_view.dart';
-import 'package:exercise/feature/home/view/home_view.dart';
 import 'package:exercise/product/extension/context/duration.dart';
 import 'package:exercise/product/extension/context/size.dart';
 import 'package:exercise/product/extension/tab_items.dart';
 import 'package:flutter/material.dart';
+
+import '../../my_space/view/my_space_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -28,13 +29,14 @@ class _MainViewState extends State<MainView> {
 
     return Scaffold(
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: const [
-          HomeView(),
-          ClubView(),
-          HomeView(),
+          MySpaceView(),
           ActivityView(),
-          HomeView(),
+          MySpaceView(),
+          ClubView(),
+          MySpaceView(),
         ],
       ),
       bottomNavigationBar: _convexBottomNavBar(context),
@@ -71,6 +73,8 @@ class _MainViewState extends State<MainView> {
     });
   }
   void _changePage(int index,BuildContext context){
-    pageController.animateToPage(index, duration: context.duration.durationNormal, curve: Curves.fastLinearToSlowEaseIn);
+    pageController.animateToPage(index,
+        duration: context.duration.durationFast,
+        curve: Curves.fastLinearToSlowEaseIn);
   }
 }

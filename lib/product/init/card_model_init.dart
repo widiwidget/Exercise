@@ -2,8 +2,8 @@
 
 import 'package:exercise/core/const/colors.dart';
 
-import '../../feature/home/model/card_model.dart';
-import '../../feature/home/model/note_card_high_model.dart';
+import '../../feature/my_space/model/card_model.dart';
+import '../../feature/my_space/model/note_card_high_model.dart';
 
 class ProjectInit{
   List<CardModel> cardModelList = [

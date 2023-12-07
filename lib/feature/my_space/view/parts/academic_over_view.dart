@@ -1,4 +1,4 @@
-part of "../home_view.dart";
+part of "../my_space_view.dart";
 
 class AcademicOverView extends StatelessWidget
     with HomeUtility, _AcademicPartUtility {
