@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 enum AppColor {
@@ -24,3 +25,4 @@ extension AppColorExtension on AppColor {
     }
   }
 }
+
