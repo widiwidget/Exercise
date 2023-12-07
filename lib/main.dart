@@ -1,4 +1,4 @@
-import 'package:exercise/feature/home/view/club_view.dart';
+import 'package:exercise/feature/main/view/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -18,7 +18,7 @@ class Main extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Exercise",
-      home: ClubScreen(),
+      home: MainView(),
     );
   }
 }
