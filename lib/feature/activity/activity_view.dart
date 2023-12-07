@@ -10,6 +10,9 @@ class ActivityView extends StatefulWidget {
 
 class _ActivityViewState extends State<ActivityView> {
   int selectedIndex = 0; // Default selected index
+
+  //todo: burdaki default value atamasını product klasoru altındaki init klasorune yeni dosya şeklinde açıp ata!
+  //todo: ama model şeklinde oluşturup dummy yaparak atamak daha temiz kod olur!
   final categories = [
     'Seminars',
     'Events',
@@ -55,6 +58,9 @@ class _ActivityViewState extends State<ActivityView> {
             //* TOP BAR
             // Activities around you text and search icon
             // Container with 3 icons
+            //todo:karmaşık widgetları extract edip part part of kullanarak temizle!
+            //todo:context üzerinden okuma yaparak border,padding,size vs o sekilde ver!
+            //todo:proje genelinde ortak birçok öğe vardır.o öğeleri kullanarak geliştirme yapılmalı!
             Container(
               padding: EdgeInsets.all(context.sized.width * 0.05),
               child: Row(
@@ -370,3 +376,4 @@ class _ActivityViewState extends State<ActivityView> {
     );
   }
 }
+

@@ -3,8 +3,8 @@ import 'package:exercise/product/extension/context/border_radius.dart';
 import 'package:exercise/product/extension/context/size.dart';
 import 'package:flutter/material.dart';
 
-class ClubScreen extends StatelessWidget with _PageUtility {
-  const ClubScreen({super.key});
+class ClubView extends StatelessWidget with _PageUtility {
+  const ClubView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +27,8 @@ class ClubScreen extends StatelessWidget with _PageUtility {
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                       colors: [
-                        AppColor.whiteheaven.getColor().withOpacity(0.0),
-                        AppColor.whiteheaven.getColor().withOpacity(1),
+                        AppColor.whiteHeaven.getColor().withOpacity(0.0),
+                        AppColor.whiteHeaven.getColor().withOpacity(1),
                       ],
                       stops: const [0.53, 1.0],
                       begin: Alignment.topCenter,
@@ -74,7 +74,7 @@ class ClubScreen extends StatelessWidget with _PageUtility {
               // MİD
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-                  AppColor.whiteheaven.getColor(),
+                  AppColor.whiteHeaven.getColor(),
                   AppColor.snowflake.getColor(),
                 ], stops: const [
                   0.1,
@@ -121,11 +121,11 @@ class ClubScreen extends StatelessWidget with _PageUtility {
                         children: [
                           Column(
                             children: [
-                              kulupToplanma(context,
-                                  ikon: Icons.location_on_sharp,
+                              clubCollection(context,
+                                  icon: Icons.location_on_sharp,
                                   title: " Öğrenci Merkezi , Oda 201"),
-                              kulupToplanma(context,
-                                  ikon: Icons.schedule,
+                              clubCollection(context,
+                                  icon: Icons.schedule,
                                   title: " Her Perşembe saat 18:30'da"),
                               const SizedBox(
                                 height: 20,
@@ -159,7 +159,7 @@ class ClubScreen extends StatelessWidget with _PageUtility {
                         height: context.sized.dynamicHeigth(0.28),
                         width: context.sized.width * 0.9,
                         decoration: BoxDecoration(
-                          color: AppColor.whiteheaven.getColor(),
+                          color: AppColor.whiteHeaven.getColor(),
                           borderRadius: context.border.smallBorderRadius,
                           boxShadow: [
                             BoxShadow(
@@ -193,23 +193,23 @@ class ClubScreen extends StatelessWidget with _PageUtility {
                                       Theme.of(context).textTheme.labelSmall),
                               Row(
                                 children: [
-                                  gezicontainer(
+                                  travelContainer(
                                       geziIcon: "assets/images/hiking.png",
                                       geziIsmi: "Doğa Yürüyüşü"),
-                                  gezicontainer(
+                                  travelContainer(
                                       geziIsmi: "Kamp",
                                       geziIcon: "assets/images/tent.png"),
-                                  gezicontainer(
+                                  travelContainer(
                                       geziIsmi: "Sörf",
                                       geziIcon: "assets/images/surfing.png"),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  gezicontainer(
+                                  travelContainer(
                                       geziIcon: "assets/images/snowboard.png",
                                       geziIsmi: "Kayak"),
-                                  gezicontainer(
+                                  travelContainer(
                                       geziIcon: "assets/images/kano.png",
                                       geziIsmi: "Kano Turları"),
                                 ],
@@ -223,7 +223,7 @@ class ClubScreen extends StatelessWidget with _PageUtility {
                       const SizedBox(height: 10),
                       Text(
                         "Üyelik",
-                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
                             ),
@@ -318,7 +318,7 @@ class ClubScreen extends StatelessWidget with _PageUtility {
 }
 
 mixin _PageUtility {
-  Padding gezicontainer({required String geziIsmi, required geziIcon}) {
+  Padding travelContainer({required String geziIsmi, required geziIcon}) {
     return Padding(
       padding: const EdgeInsets.only(right: 6, top: 8),
       child: Container(
@@ -351,14 +351,14 @@ mixin _PageUtility {
     );
   }
 
-  SizedBox kulupToplanma(BuildContext context,
-      {required IconData ikon, required String title}) {
+  SizedBox clubCollection(BuildContext context,
+      {required IconData icon, required String title}) {
     return SizedBox(
       height: context.sized.dynamicHeigth(0.07),
       width: context.sized.width * 0.45,
       child: Row(
         children: [
-          Icon(ikon),
+          Icon(icon),
           Text(
             title,
             style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w500),

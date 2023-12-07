@@ -27,7 +27,7 @@ mixin _TopComponentUtility{
             borderRadius: context.border.smallBorderRadius),
         height: topComponentGeneralSize(context),
         elevation: const MaterialStatePropertyAll(0),
-        backgroundColor: AppColor.drWhite.getColor(),
+        backgroundColor: AppColor.whiteHeaven.getColor(),
         onPressed: () {},
         child: Icon(icon));
   }

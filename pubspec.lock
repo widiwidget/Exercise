@@ -65,16 +65,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
-
-  convex_bottom_bar:
-    dependency: "direct main"
-    description:
-      name: convex_bottom_bar
-      sha256: ebf0f3deb1e8e99374d844fee7485d2980ec502dedfaad395c12118477933aef
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.0"
-
   convert:
     dependency: transitive
     description:
@@ -83,6 +73,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
+  convex_bottom_bar:
+    dependency: "direct main"
+    description:
+      name: convex_bottom_bar
+      sha256: ebf0f3deb1e8e99374d844fee7485d2980ec502dedfaad395c12118477933aef
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   crypto:
     dependency: transitive
     description:
@@ -99,7 +97,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -211,7 +208,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
-
   percent_indicator:
     dependency: "direct main"
     description:
@@ -224,10 +220,10 @@ packages:
     dependency: transitive
     description:
       name: petitparser
-      sha256: c15605cd28af66339f8eb6fbe0e541bfe2d1b72d5825efc6598f3e0a31b9ad27
+      sha256: eeb2d1428ee7f4170e2bd498827296a18d4e7fc462b71727d111c0ac7707cfa6
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.2"
+    version: "6.0.1"
   pointycastle:
     dependency: transitive
     description:
@@ -317,18 +313,18 @@ packages:
     dependency: transitive
     description:
       name: web
-      sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
+      sha256: "14f1f70c51119012600c5f1f60ca68efda5a9b6077748163c6af2893ec5df8fc"
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.0"
+    version: "0.2.1-beta"
   xml:
     dependency: transitive
     description:
       name: xml
-      sha256: b015a8ad1c488f66851d762d3090a21c600e479dc75e68328c52774040cf9226
+      sha256: af5e77e9b83f2f4adc5d3f0a4ece1c7f45a2467b695c2540381bac793e34e556
       url: "https://pub.dev"
     source: hosted
-    version: "6.5.0"
+    version: "6.4.2"
   yaml:
     dependency: transitive
     description:
@@ -340,4 +336,3 @@ packages:
 sdks:
   dart: ">=3.2.0-210.3.beta <4.0.0"
   flutter: ">=2.12.0"
-

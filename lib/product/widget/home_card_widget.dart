@@ -20,7 +20,7 @@ class HomeCardWidget extends StatelessWidget {
       margin: context.padding.topOnlyNormal,
       decoration: BoxDecoration(
         boxShadow: shadow,
-          color: AppColor.cascadingWhite.getColor(),
+          color: AppColor.whiteHeaven.getColor(),
           borderRadius: context.border.smallBorderRadius),
       height: context.sized.dynamicHeigth(0.2),
       width: context.sized.width - context.sized.dynamicHeigth(0.06),

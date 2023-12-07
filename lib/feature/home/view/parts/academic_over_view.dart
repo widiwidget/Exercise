@@ -15,7 +15,7 @@ class AcademicOverView extends StatelessWidget
         height: context.sized.dynamicHeigth(0.4),
         decoration: BoxDecoration(
             boxShadow: _componentShadow,
-            color: AppColor.cascadingWhite.getColor(),
+            color: AppColor.whiteHeaven.getColor(),
             borderRadius: context.border.smallBorderRadius),
         child: Column(
           children: [

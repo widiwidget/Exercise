@@ -19,6 +19,5 @@ extension TabItemsExtension on TabItems{
         return _capitalize(name);
     }
   }
-
   String _capitalize(String name) => name.toString().split(".").last[0].toUpperCase() + name.substring(1);
 }

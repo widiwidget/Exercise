@@ -1,5 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:exercise/core/const/colors.dart';
+import 'package:exercise/feature/activity/activity_view.dart';
+import 'package:exercise/feature/club/club_view.dart';
 import 'package:exercise/feature/home/view/home_view.dart';
 import 'package:exercise/product/extension/context/duration.dart';
 import 'package:exercise/product/extension/context/size.dart';
@@ -29,9 +31,9 @@ class _MainViewState extends State<MainView> {
         controller: pageController,
         children: const [
           HomeView(),
+          ClubView(),
           HomeView(),
-          HomeView(),
-          HomeView(),
+          ActivityView(),
           HomeView(),
         ],
       ),
