@@ -6,7 +6,6 @@ enum AppColor {
   camellia,
   whiteheaven,
   snowflake,
-  tahin
 }
 
 extension AppColorExtension on AppColor {
@@ -22,8 +21,6 @@ extension AppColorExtension on AppColor {
         return const Color(0xfffefefe);
       case AppColor.snowflake:
         return Colors.grey[200]!;
-      case AppColor.tahin:
-        return const Color(0xfffefaf7);
     }
   }
 }
